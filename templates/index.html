@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arina's Profile</title>
+    <link rel="stylesheet" href="static/style_page.css">
+    <script>
+        function showTab(tabId) {
+            var tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(function(tab) {
+                tab.style.display = 'none';
+            });
+            document.getElementById(tabId).style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            showTab('home');
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Hi, {{ session.get('username', 'Guest') }}!</h1>
+        <img src="static/profile.jpg" alt="Arina" class="profile-image">
+
+        <nav>
+            <ul class="nav-tabs">
+                <li><a href="javascript:void(0)" onclick="showTab('home')">Home</a></li>
+                <li><a href="javascript:void(0)" onclick="showTab('education')">Education</a></li>
+                <li><a href="javascript:void(0)" onclick="showTab('portfolio')">Portfolio</a></li>
+                <li><a href="javascript:void(0)" onclick="showTab('contacts')">Contacts</a></li>
+            </ul>
+        </nav>
+
+        <div id="home" class="tab-content">
+            <h2>My Skills:</h2>
+            <ul>
+                <li>
+                    <strong>Security Testing in SDL:</strong>
+                    <p>SAST (Static Application Security Testing) - analyzing source code for vulnerabilities.</p>
+                    <p>DAST (Dynamic Application Security Testing) - testing running applications to identify vulnerabilities.</p>
+                    <p>Vulnerability scanning - automated scanning for known vulnerabilities.</p>
+                    <p>Secret Detection - identifying secrets (e.g., API keys) in the code.</p>
+                </li>
+                <li>
+                    <strong>Secure Product Development:</strong>
+                    <p>Implementing secure development principles at all stages of the software development lifecycle.</p>
+                    <p>Training development teams on secure practices and methodologies.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div id="education" class="tab-content">
+            <h2>Education:</h2>
+            <p>Bachelor's Degree in Information Security from ITMO University.</p>
+            <p>Certified Ethical Hacker (CEH).</p>
+        </div>
+
+        <div id="portfolio" class="tab-content">
+            <h2>Portfolio:</h2>
+            <p>Projects include:</p>
+            <ul>
+                <li>Security assessment of web applications.</li>
+                <li>Development of security training materials for developers.</li>
+                <li>Implementation of security best practices in software development.</li>
+            </ul>
+        </div>
+
+        <div id="contacts" class="tab-content">
+            <h2>Contacts:</h2>
+            <p>Email: arina@gmail.com</p>
+            <p>LinkedIn: linkedin.com/in/arina</p>
+        </div>
+        <form method="POST" action="{{ url_for('logout') }}">
+            <button type="submit">Log out</button>
+        </form>
+    </div>
+</body>
+</html>

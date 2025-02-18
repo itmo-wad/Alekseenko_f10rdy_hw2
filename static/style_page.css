@@ -1,0 +1,61 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid pink;
+    border-radius: 10px;
+    background-color: rgba(255, 20, 147, 0.1);
+    box-shadow: 0 0 10px pink;
+}
+
+h1, h2 {
+    color: pink;
+}
+
+.profile-image {
+    width: 200px;
+    border-radius: 50%;
+    border: 2px solid pink;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 20px;
+    border: 1px solid pink;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 20, 147, 0.2);
+}
+
+.nav-tabs {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.nav-tabs li {
+    display: inline;
+}
+
+.nav-tabs a {
+    color: pink;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-tabs a:hover {
+    background-color: rgba(255, 20, 147, 0.3);
+    border-radius: 5px;
+}
